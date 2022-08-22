@@ -43,6 +43,7 @@ header {
   .dropdown-content {
     display: none;
     position: absolute;
+    z-index: 999;
     right: 0;
     background: var(--black-02);
     list-style: none;
