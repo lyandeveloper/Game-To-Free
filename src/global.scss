@@ -34,6 +34,13 @@ body {
 
 button {
   cursor: pointer;
+  color: var(--white);
+  background: var(--main-color);
+  outline: 0;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 a {

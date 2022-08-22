@@ -1,3 +1,32 @@
 main {
   padding: 2%;
 }
+
+.section-name {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.games {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  button {
+    padding: 1rem;
+    margin-top: 1rem;
+    align-self: center;
+  }
+}
+
+.games-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrapper {
+  margin: 1rem;
+}
