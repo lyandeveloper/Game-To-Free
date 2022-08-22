@@ -9,6 +9,7 @@
   --main-color: #8956D7;
   --black-01: #171717;
   --black-02: #1E1E20;
+  --black-03: #313135;
   --gray-01: #ADADAF;
   --white: #FFFFFF;
 }
@@ -26,6 +27,7 @@
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   background: var(--black-01);
   color: var(--white)
 }
@@ -37,4 +39,10 @@ button {
 a {
   color: white;
   text-decoration: none;
+}
+
+.container {
+  max-width: 1920px;
+  padding: 0 2%;
+  margin: 0 auto;
 }
