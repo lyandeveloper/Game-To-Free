@@ -35,6 +35,13 @@ export class GameService {
         catchError(this.handleError))
   }
 
+  getGamesByCategory(category: string | null): Observable<Game> {
+    return this.httpClient.get<Game>(`${environment.apiUrl}/games?category=${category}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
   paginate(array: Game[], pageNumber: number, pageSize: number) {
     return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GameService } from '../services/game-service/game.service';
 
 @Component({
   selector: 'app-category',
@@ -8,15 +9,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
-  id: string | null = ''
+  category: string | null = ''
+  games: any = []
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private gameService: GameService, private route: ActivatedRoute) {}
 
   ngOnInit(){
-    // 'bank' is the name of the route parameter
-    this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
+    this.getGameByCategory()
 
+  }
+
+  getGameByCategory() {
+    this.category = this.route.snapshot.paramMap.get('category');
+    this.gameService.getGamesByCategory(this.category).subscribe((games: any) => {
+      this.games = this.gameService.paginate(games, 1, 32);
+      this.gameService.parseCategories(this.games)
+    });
   }
 
 }

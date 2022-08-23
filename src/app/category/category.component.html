@@ -1,1 +1,18 @@
-<p>category works!</p>
+<section class="games-category">
+  <span>Category: {{ category }}</span>
+  <article class="games-category-content">
+    <div *ngFor="let game of games">
+      <div class="category-card-wrapper">
+        <app-game-card
+          [id]="game.id"
+          [thumbnail]="game.thumbnail"
+          [title]="game.title"
+          [description]="game.short_description"
+          [platform]="game.platform"
+        >
+        </app-game-card>
+      </div>
+    </div>
+  </article>
+  <button>View More</button>
+</section>

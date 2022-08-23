@@ -1,0 +1,33 @@
+section {
+  margin-bottom: 1rem;
+  padding: 0 2%;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.games-category {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  button {
+    padding: 1rem;
+    margin-top: 1rem;
+    align-self: center;
+  }
+}
+
+.games-category-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-card-wrapper {
+  margin: 1rem;
+}

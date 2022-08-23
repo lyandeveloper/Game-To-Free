@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
   constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
-    this.getCars()
+    this.getGames()
   }
 
-  getCars() {
+  getGames() {
     this.gameService.getGames().subscribe((games: any) => {
       this.games = this.gameService.paginate(games, 1, 8);
       this.gameService.parseCategories(this.games)

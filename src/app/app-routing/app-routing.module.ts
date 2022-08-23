@@ -7,7 +7,7 @@ import { GameComponent } from '../game/game.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'category/:id', component: CategoryComponent },
+  { path: 'category/:category', component: CategoryComponent },
   { path: 'game/:id', component: GameComponent },
 ];
 
