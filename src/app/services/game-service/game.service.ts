@@ -2,27 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { Game } from './game';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  private url: string = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
 
   constructor(private httpClient: HttpClient) { }
 
   // Headers
   httpOptions = {
     headers: new HttpHeaders({
-      'X-RapidAPI-Key': '732a89c62dmshef64b9cd2e224c0p1ee551jsnfe22f2b3d73f',
-      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+      'X-RapidAPI-Key': environment.X_RapidAPI_Key,
+      'X-RapidAPI-Host': environment.X_RapidAPI_Host
     })
   }
 
   // Obtem todos os carros
   getGames(): Observable<Game[]> {
-    return this.httpClient.get<Game[]>(this.url, this.httpOptions)
+    return this.httpClient.get<Game[]>(`${environment.apiUrl}/games`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError))

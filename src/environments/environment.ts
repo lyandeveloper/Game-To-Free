@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://free-to-play-games-database.p.rapidapi.com/api',
+  X_RapidAPI_Key: '732a89c62dmshef64b9cd2e224c0p1ee551jsnfe22f2b3d73f',
+  X_RapidAPI_Host: 'free-to-play-games-database.p.rapidapi.com'
 };
 
 /*
