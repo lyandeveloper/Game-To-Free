@@ -28,8 +28,31 @@ export class GameService {
         catchError(this.handleError))
   }
 
+  getGame(id: number): Observable<Game> {
+    return this.httpClient.get<Game>(`${environment.apiUrl}/game?id=${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
   paginate(array: Game[], pageNumber: number, pageSize: number) {
     return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+  }
+
+  parseCategories(games: any) {
+    games.forEach((game:any )=> {
+      game.platform == 'PC (Windows)' ? game.platform = 'PC' : game.platform
+      game.platform == 'Web Browser' ? game.platform = 'Web' : game.platform
+
+      return game
+    })
+  }
+
+  parseCategory(game: any) {
+    game.platform == 'PC (Windows)' ? game.platform = 'PC' : game.platform
+    game.platform == 'Web Browser' ? game.platform = 'Web' : game.platform
+
+    return game
   }
 
   handleError(error: HttpErrorResponse) {

@@ -9,6 +9,7 @@ import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { GameComponent } from './game/game.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
     GameCardComponent,
     CategoryComponent,
     HomeComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+  ],
+  exports:[
+    HeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,30 @@
+<main>
+  <div class="background">
+    <div class="overlay"></div>
+    <img src="{{ game.thumbnail }}" alt="">
+
+    <div class="game-content">
+      <div class="game-profile">
+        <img src="{{ game.thumbnail }}" alt="">
+        <a href="{{ game.game_url }}" target="_blank">
+          <button>
+            Play Now
+          </button>
+        </a>
+      </div>
+      <div class="game-info">
+        <h2>{{ game.title }}</h2>
+        <div class="platform">
+          <span class="highlight">{{ game.platform }}</span>
+          <span class="dot"></span>
+          <span class="highlight">{{ game.genre }}</span>
+          <span class="dot"></span>
+          <span class="highlight">{{ game.publisher }}</span>
+          <span class="dot"></span>
+          <span class="highlight">{{ game.release_date }}</span>
+        </div>
+        <p>{{ game.description }}</p>
+      </div>
+    </div>
+  </div>
+</main>

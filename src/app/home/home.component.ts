@@ -19,19 +19,8 @@ export class HomeComponent implements OnInit {
   getCars() {
     this.gameService.getGames().subscribe((games: any) => {
       this.games = this.gameService.paginate(games, 1, 8);
-      this.parseCategories()
+      this.gameService.parseCategories(this.games)
     });
   }
-
-  parseCategories() {
-    this.games.forEach((game:any )=> {
-      game.platform == 'PC (Windows)' ? game.platform = 'PC' : game.platform
-      game.platform == 'Web Browser' ? game.platform = 'Web' : game.platform
-
-      return game
-    })
-  }
-
-
 
 }

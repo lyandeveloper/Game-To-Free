@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from '../category/category.component';
 import { HomeComponent } from '../home/home.component';
+import { GameComponent } from '../game/game.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category/:id', component: CategoryComponent },
+  { path: 'game/:id', component: GameComponent },
 ];
 
 @NgModule({
