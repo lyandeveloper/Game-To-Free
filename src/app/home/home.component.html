@@ -5,29 +5,17 @@
 
   <section class="games">
     <article class="games-content">
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
-      </div>
-      <div class="card-wrapper">
-        <app-game-card></app-game-card>
+      <div *ngFor="let game of games">
+        <div class="card-wrapper">
+          <app-game-card
+            [id]="game.id"
+            [thumbnail]="game.thumbnail"
+            [title]="game.title"
+            [description]="game.short_description"
+            [platform]="game.platform"
+          >
+          </app-game-card>
+        </div>
       </div>
     </article>
     <button>View More</button>

@@ -1,6 +1,7 @@
 .card-container {
   position: relative;
   width: 20vw;
+  min-height: 50vh;
   background-color: var(--black-03);
   border-radius: 4px;
   transition: box-shadow 0.2s;
@@ -25,6 +26,10 @@
   p {
     margin-top: 1rem;
     font-weight: lighter;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
